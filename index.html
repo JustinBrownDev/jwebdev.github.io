@@ -8,3 +8,39 @@
     <script src="https://pastebin.com/embed_js/L2e2P4BW"></script>
   </body>
 </html>
+function onDivAdded(divElement) {
+    console.log('Div with class "my-class" was added:', divElement);
+    // Add more actions here if needed
+}
+
+// Function to start observing for DOM changes
+function observeDOMChanges() {
+    // Select the target node to observe (document body in this case)
+    const targetNode = document.body;
+
+    // Define the mutation observer options
+    const config = { childList: true, subtree: true };
+
+    // Create a callback function to execute when mutations are detected
+    const callback = function(mutationsList) {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === 1 && node.tagName === 'DIV' && node.classList.contains('my-class')) {
+                        // Call the handler function when a div with the specific class is detected
+                        onDivAdded(node);
+                    }
+                });
+            }
+        }
+    };
+
+    // Create a new MutationObserver instance
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node
+    observer.observe(targetNode, config);
+}
+
+// Call the function to start observing
+observeDOMChanges();
