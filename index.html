@@ -20,6 +20,7 @@ function observeDOMChanges() {
         for (let mutation of mutationsList) {
             if (mutation.target.className === "de1") {
                 console.log(mutation.target.textContent)
+                document.getElementsByClassName("embedPastebin")[0].remove()
             }
         }
     };
