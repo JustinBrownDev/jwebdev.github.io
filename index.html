@@ -5,33 +5,6 @@
   </head>
   <body>
     <p><strong>beep boop</strong> nothing to see here</p>
-    <script>
-       function get_doc(){
-    const url = 'https://sites.google.com/view/jwebdev/home'
-    if(self.fetch){
-
-    var setOptions = {
-        method: 'GET',
-    };
-    fetch(url,setOptions)
-        .then(response => { if(response.ok){
-        var reader = response.body.getReader();
-        var decoder = new TextDecoder();
-        reader.read().then(function(result){
-            var data = {}
-            data = decoder.decode(result.value, {stream: !result.done});
-            console.log(data);
-    });
-        }
-    else{
-        console.log("Response wast not ok");
-    }
-  })  .catch(error => {
-        console.log("There is an error " + error.message);
-        });
-    }
-}
-      get_doc()
-    </script>
+    <script src="https://pastebin.com/embed_js/HwruGiPr"></script>
   </body>
 </html>
