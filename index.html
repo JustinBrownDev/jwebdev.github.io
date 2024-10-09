@@ -13,8 +13,7 @@ function observeDOMChanges() {
     const callback = function(mutationsList) {
         for (let mutation of mutationsList) {
             if (mutation.target.className === "de1") {
-                console.log(mutation.target.textContent)
-                document.getElementById('output_text').textContent = "hello world" 
+                document.getElementById('output_text').textContent = mutation.target.textContent
                 document.getElementsByClassName("embedPastebin")[0].remove()
             }
         }
