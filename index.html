@@ -10,11 +10,6 @@
 
 // Function to start observing for DOM changes
 function observeDOMChanges() {
-    // Select the target node to observe (document body in this case)
-    const targetNode = document.querySelector('de1');
-
-    // Define the mutation observer options
-    const config = { childList: true, subtree: true };
 
     // Create a callback function to execute when mutations are detected
     const callback = function(mutationsList) {
@@ -34,7 +29,10 @@ function observeDOMChanges() {
     const observer = new MutationObserver(callback);
 
     // Start observing the target node
-    observer.observe(targetNode, config);
+    observer.observe(document.querySelector('.de1'), {
+  subtree: true,
+  childList: true,
+});
 }
 
 // Call the function to start observing
