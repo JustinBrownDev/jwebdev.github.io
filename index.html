@@ -18,8 +18,11 @@ function observeDOMChanges() {
     // Create a callback function to execute when mutations are detected
     const callback = function(mutationsList) {
         for (let mutation of mutationsList) {
-            if (mutation.target.className === "dei") {
+            if (mutation.target.className === "de1") {
                 console.log(mutation.target.textContent)
+            }
+            else{
+                console.log(mutation.)
             }
         }
     };
