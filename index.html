@@ -29,7 +29,7 @@ function observeDOMChanges() {
     const observer = new MutationObserver(callback);
 
     // Start observing the target node
-    observer.observe(document.querySelector('.de1'), {
+    observer.observe(document.getRootNode(), {
   subtree: true,
   childList: true,
 });
