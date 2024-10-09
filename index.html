@@ -14,14 +14,15 @@ function observeDOMChanges() {
     // Create a callback function to execute when mutations are detected
     const callback = function(mutationsList) {
         for (let mutation of mutationsList) {
-            if (mutation.type === 'childList') {
+            //if (mutation.type === 'childList') 
+          console.log(mutation.type)
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1 && node.tagName === 'DIV' && node.classList.contains('my-class')) {
                         // Call the handler function when a div with the specific class is detected
                         onDivAdded(node);
                     }
                 });
-            }
+            
         }
     };
 
@@ -29,7 +30,7 @@ function observeDOMChanges() {
     const observer = new MutationObserver(callback);
 
     // Start observing the target node
-    observer.observe(document.body.ATTRIBUTE_NODE , {
+    observer.observe(document.body.getRootNode(), {
   subtree: true,
   childList: true,
 });
