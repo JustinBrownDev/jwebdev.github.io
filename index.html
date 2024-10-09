@@ -18,8 +18,8 @@ function observeDOMChanges() {
     // Create a callback function to execute when mutations are detected
     const callback = function(mutationsList) {
         for (let mutation of mutationsList) {
-            //if (mutation.type === 'childList') 
-          console.log(mutation)
+            //if (mutation.target === div.dei) 
+          console.log(mutation.target)
                 mutation.addedNodes.forEach(node => {
                     if (node.nodeType === 1 && node.tagName === 'DIV' && node.classList.contains('my-class')) {
                         // Call the handler function when a div with the specific class is detected
