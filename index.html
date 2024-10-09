@@ -5,7 +5,7 @@
     
   </head>
   <body>
-    <p><strong>beep boop</strong> nothing to see here</p>
+    <div id="output_text"></div>
     <script>
       function onDivAdded(divElement) {
     console.log('Div with class "my-class" was added:', divElement);
@@ -20,6 +20,7 @@ function observeDOMChanges() {
         for (let mutation of mutationsList) {
             if (mutation.target.className === "de1") {
                 console.log(mutation.target.textContent)
+                document.getElementById('output_text').textContent = "hello world" 
                 document.getElementsByClassName("embedPastebin")[0].remove()
             }
         }
