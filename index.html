@@ -11,7 +11,7 @@
 // Function to start observing for DOM changes
 function observeDOMChanges() {
     // Select the target node to observe (document body in this case)
-    const targetNode = document.body;
+    const targetNode = document.querySelector('div');
 
     // Define the mutation observer options
     const config = { childList: true, subtree: true };
